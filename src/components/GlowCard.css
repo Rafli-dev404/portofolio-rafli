@@ -1,0 +1,102 @@
+
+.glow-card {
+  --glow-color: 220;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  --glow-opacity: 0;
+
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 20px;
+
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 18px;
+
+  background: rgb(10 14 26 / 85%);
+  box-shadow: 0 12px 40px rgb(0 0 0 / 16%);
+
+  transition:
+    border-color 250ms ease,
+    background-color 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.glow-card--sm {
+  min-height: 240px;
+}
+
+.glow-card--md {
+  min-height: 300px;
+}
+
+.glow-card--lg {
+  min-height: 360px;
+}
+
+.glow-card:hover {
+  border-color: hsl(var(--glow-color) 100% 75% / 40%);
+  box-shadow: 0 16px 50px rgb(0 0 0 / 25%);
+}
+
+.glow-card__effect {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+
+  background: radial-gradient(
+    280px circle at var(--mouse-x) var(--mouse-y),
+    hsl(var(--glow-color) 100% 65% / 13%),
+    transparent 70%
+  );
+
+  opacity: var(--glow-opacity);
+  transition: opacity 200ms ease;
+}
+
+.glow-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+
+  background: radial-gradient(
+    180px circle at var(--mouse-x) var(--mouse-y),
+    hsl(var(--glow-color) 100% 75% / 85%),
+    transparent 75%
+  );
+
+  opacity: var(--glow-opacity);
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  transition: opacity 200ms ease;
+}
+
+.glow-card__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow-card,
+  .glow-card__effect,
+  .glow-card::before {
+    transition: none;
+  }
+}

@@ -1,0 +1,109 @@
+
+@import "tailwindcss";
+
+@theme {
+  /* Typography */
+  --font-primary: Verdana, Geneva, Tahoma, sans-serif;
+
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-md: 15.2px;
+  --text-base: 14px;
+  --text-base--line-height: 22.75px;
+  --text-lg: 16px;
+  --text-xl: 18px;
+  --text-2xl: 20px;
+  --text-3xl: 30px;
+  --text-4xl: 64px;
+
+  /* Semantic colors */
+  --color-text-primary: #ffffff;
+  --color-text-tertiary: #c0c0dc;
+  --color-text-inverse: #f0f0ff;
+
+  --color-surface-base: #000000;
+  --color-surface-raised: #2c67ed;
+  --color-surface-strong: #050510;
+
+  --color-border-default: #e5e7eb;
+  --color-border-strong: #2563eb;
+
+  /* Radius */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 9999px;
+
+  /* Spacing tokens */
+  --spacing-1: 2px;
+  --spacing-2: 4px;
+  --spacing-3: 8px;
+  --spacing-4: 10px;
+  --spacing-5: 12px;
+  --spacing-6: 16px;
+  --spacing-7: 20px;
+  --spacing-8: 24px;
+}
+
+/* Global foundations */
+:root {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.625;
+  color: var(--color-text-primary);
+  background: var(--color-surface-base);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-border-strong);
+  outline-offset: 4px;
+}
+
+::selection {
+  color: var(--color-text-primary);
+  background: var(--color-border-strong);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

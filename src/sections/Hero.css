@@ -1,0 +1,253 @@
+
+.hero-scroll {
+  position: relative;
+  min-height: 120svh;
+  background: transparent;
+}
+
+.hero-scroll-stage {
+  position: sticky;
+  top: 0;
+  isolation: isolate;
+  background: transparent;
+}
+
+.hero-layout {
+  min-height: 100svh;
+}
+
+.hero-grid,
+.hero-glow {
+  display: none;
+}
+
+.hero-content {
+  min-width: 0;
+  will-change: transform, opacity;
+}
+
+.hero-title-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+.hero-title-line {
+  will-change: transform, opacity;
+}
+
+.hero-accent {
+  display: inline-block;
+  transform-origin: left center;
+}
+
+.hero-description,
+.hero-actions,
+.hero-eyebrow {
+  will-change: transform, opacity;
+}
+
+/* Spotify card */
+
+.hero-spotify {
+  position: relative;
+  left: -50px;
+  top: 50px;
+  width: 100%;
+  max-width: 440px;
+  justify-self: end;
+  min-width: 0;
+  will-change: transform, opacity;
+}
+
+
+.spotify-card {
+  overflow: hidden;
+  padding: 18px;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 24px;
+  background: rgb(10 14 24 / 78%);
+  box-shadow: 0 24px 80px rgb(0 0 0 / 30%);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition:
+    border-color 300ms ease,
+    background 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.spotify-card:hover {
+  border-color: rgb(30 215 96 / 25%);
+  background: rgb(10 16 22 / 90%);
+  box-shadow: 0 28px 90px rgb(0 0 0 / 38%);
+}
+
+.spotify-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.spotify-label {
+  margin: 0 0 5px;
+  color: #1ed760;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.spotify-heading {
+  margin: 0;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.spotify-status {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 6px;
+  color: #b7c5b9;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+.spotify-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #1ed760;
+  box-shadow: 0 0 10px rgb(30 215 96 / 60%);
+}
+
+.spotify-card iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 0;
+  border-radius: 12px;
+}
+
+.spotify-caption {
+  margin: 12px 0 0;
+  color: rgb(255 255 255 / 45%);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* Scroll indicator */
+.hero-scroll-label {
+  position: absolute;
+  right: max(24px, calc((100% - 1200px) / 2));
+  bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgb(255 255 255 / 40%);
+  font-family: monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+
+.hero-scroll-line {
+  display: block;
+  width: 34px;
+  height: 1px;
+  background: #3b82f6;
+}
+
+/* Tablet and mobile */
+@media (max-width: 1023px) {
+  .hero-scroll {
+    min-height: 120svh;
+  }
+
+  .hero-scroll-stage {
+    height: auto;
+    min-height: 100svh;
+    align-items: flex-start;
+  }
+
+  .hero-layout {
+    min-height: 100svh;
+    padding-top: 120px;
+    padding-bottom: 100px;
+    gap: 36px;
+  }
+
+  .hero-spotify {
+    max-width: 500px;
+    justify-self: start;
+  }
+
+  .hero-scroll-label {
+    right: 24px;
+    bottom: 24px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-scroll {
+    min-height: auto;
+  }
+
+  .hero-scroll-stage {
+    position: relative;
+    min-height: 100svh;
+    height: auto;
+  }
+
+  .hero-layout {
+    padding: 110px 24px 100px;
+    gap: 40px;
+  }
+
+  .hero-spotify {
+    max-width: 100%;
+  }
+
+  .spotify-card {
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  .spotify-heading {
+    font-size: 18px;
+  }
+
+  .hero-scroll-label {
+    right: 24px;
+    bottom: 24px;
+    font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll {
+    min-height: 100svh;
+  }
+
+  .hero-scroll-stage {
+    position: relative;
+    height: auto;
+    min-height: 100svh;
+  }
+
+  .hero-content,
+  .hero-title-line,
+  .hero-description,
+  .hero-actions,
+  .hero-eyebrow,
+  .hero-spotify {
+    will-change: auto;
+  }
+
+  .spotify-card {
+    transition: none;
+  }
+}
