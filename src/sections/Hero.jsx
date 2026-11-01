@@ -441,22 +441,63 @@ export default function Hero() {
               intuitif, dan bermakna.
             </p>
 
-            <div className="hero-actions mt-9 flex flex-wrap gap-4">
-              <a
-                href="#portfolio"
-                className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition-colors duration-300 hover:bg-blue-500"
-              >
-                Explore Projects
-                <span aria-hidden="true">↗</span>
-              </a>
+            <div className="hero-actions mt-9 flex flex-col items-start gap-5">
+  <div className="flex flex-wrap gap-4">
+    <a
+      href="#portfolio"
+      className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition-colors duration-300 hover:bg-blue-500"
+    >
+      Explore Projects
+      <span aria-hidden="true">↗</span>
+    </a>
 
-              <a
-                href="#contact"
-                className="inline-flex items-center rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition-colors duration-300 hover:border-white/35 hover:bg-white/[0.05]"
-              >
-                Let&apos;s Connect
-              </a>
-            </div>
+    <a
+      href="#contact"
+      className="inline-flex items-center rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition-colors duration-300 hover:border-white/35 hover:bg-white/[0.05]"
+    >
+      Let&apos;s Connect
+    </a>
+  </div>
+
+  {/* Social Media Links */}
+  <div className="flex items-center gap-4">
+    <a
+      href="https://github.com/Rafli-dev404"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="GitHub Profile"
+      title="GitHub"
+      className="group inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-white/60 transition-all duration-300 hover:-translate-y-1 hover:border-white/30 hover:bg-white/[0.08] hover:text-white"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        className="h-8 w-8"
+        aria-hidden="true"
+      >
+        <path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.08c-3.1.68-3.76-1.31-3.76-1.31-.5-1.29-1.24-1.63-1.24-1.63-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 .1.76 2.15 3.54 1.63.1-.72.39-1.22.7-1.5-2.48-.28-5.09-1.24-5.09-5.53 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.12-1.45 3.05-1.15 3.05-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.3-2.61 5.25-5.1 5.53.4.35.75 1.02.75 2.06V22c0 .29.2.64.77.53A11.1 11.1 0 0 0 12 .9Z" />
+      </svg>
+    </a>
+
+    <a
+      href="https://www.linkedin.com/in/rafli-rohimat/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="LinkedIn Profile"
+      title="LinkedIn"
+      className="group inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-white/60 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400/40 hover:bg-blue-500/10 hover:text-blue-400"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        className="h-8 w-8"
+        aria-hidden="true"
+      >
+        <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.45H4.96V9h2.97v9.45ZM6.44 7.71a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm12.01 10.74h-2.96v-4.6c0-1.1-.02-2.52-1.54-2.52-1.55 0-1.79 1.2-1.79 2.44v4.68H9.2V9h2.84v1.29h.04c.4-.75 1.36-1.54 2.8-1.54 3 0 3.57 1.97 3.57 4.53v5.17Z" />
+      </svg>
+    </a>
+  </div>
+</div>
           </div>
 
           {/* Spotify playlist */}

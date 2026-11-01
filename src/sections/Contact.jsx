@@ -249,21 +249,21 @@ export default function Contact() {
   }, [comments, reduceMotion])
 
   const handleContactSubmit = (e) => {
-    e.preventDefault()
+  e.preventDefault()
 
-    const phoneNumber = '6285801345594'
+  const phoneNumber = '6285801345594'
 
-    const message = `Halo, saya ${form.name}.
+  const message = `Halo, saya ${form.name}.
 Email: ${form.email}
 
 Pesan:
 ${form.message}`
 
-    const whatsappURL =
-      `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`
+  const whatsappURL =
+    `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 
-    window.open(whatsappURL, '_blank', 'noopener,noreferrer')
-  }
+  window.open(whatsappURL, '_blank', 'noopener,noreferrer')
+}
 
   const handleCommentSubmit = (e) => {
     e.preventDefault()
